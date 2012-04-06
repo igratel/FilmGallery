@@ -4,6 +4,10 @@ class FilmCollection
   end
 
   def add (film)
-    @films.push(film)
+    if @films.find { |a_film| film.title == a_film.title } == nil
+      @films.push(film)
+    else
+      @films
+    end
   end
 end
