@@ -18,4 +18,11 @@ describe "Film" do
     film.genres.each { |genre| genre_hash[genre] += 1 }
     genre_hash["some genre"].should == 1
   end
+
+  it "should tell if film has specified genre" do
+    film = Film.new("some name")
+    film.add_genre("some genre")
+    film.has_genre?("some genre").should == true
+    film.has_genre?("some not existing genre").should == false
+  end
 end

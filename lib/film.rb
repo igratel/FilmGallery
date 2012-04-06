@@ -14,4 +14,12 @@ class Film
       @genres.push(genre)
     end
   end
+
+  def has_genre? (genre)
+    if @genres.find { |g| g == genre} != nil
+      true
+    else
+      false
+    end
+  end
 end
