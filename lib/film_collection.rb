@@ -11,7 +11,12 @@ class FilmCollection
     end
   end
 
-
+  def delete (title)
+    if find(title) != nil
+      index = @films.find_index(find(title))
+      @films.delete_at(index)
+    end
+  end
 
   def find (title)
     @films.find { |film| title == film.title }
