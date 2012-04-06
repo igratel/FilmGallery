@@ -8,4 +8,8 @@ class Film
     @countries = Array.new
     @seasons = nil
   end
+
+  def add_genre (genre)
+    @genres.push(genre)
+  end
 end
