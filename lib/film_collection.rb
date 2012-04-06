@@ -11,6 +11,8 @@ class FilmCollection
     end
   end
 
+
+
   def find (title)
     @films.find { |film| title == film.title }
   end
@@ -28,6 +30,6 @@ class FilmCollection
     else
       nil
     end
-
   end
+
 end

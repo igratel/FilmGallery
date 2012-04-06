@@ -39,4 +39,12 @@ describe "Film Collection" do
     film_collection.change_title("some title", "some other title").title.should_not == "some other title"
   end
 
+  it "should delete film" do
+    film_collection = FilmCollection.new
+    film_collection.add(Film.new("some title"))
+    film_collection.add(Film.new("some other title"))
+    film_collection.delete("some other title")
+    film_collection.find("some other title").should == nil
+  end
+
 end
