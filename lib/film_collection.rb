@@ -1,3 +1,9 @@
 class FilmCollection
-  # To change this template use File | Settings | File Templates.
+  def initialize ()
+    @films = Array.new
+  end
+
+  def add (film)
+    @films.push(film)
+  end
 end

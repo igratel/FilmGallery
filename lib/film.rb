@@ -1,3 +1,7 @@
 class Film
-  # To change this template use File | Settings | File Templates.
+  attr_reader :title
+
+  def initialize (title)
+    @title = title
+  end
 end
