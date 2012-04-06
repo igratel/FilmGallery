@@ -10,6 +10,8 @@ class Film
   end
 
   def add_genre (genre)
-    @genres.push(genre)
+    if @genres.find { |g| g == genre} == nil
+      @genres.push(genre)
+    end
   end
 end

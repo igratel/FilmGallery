@@ -7,7 +7,7 @@ describe "Film" do
   it "should add genre to genres list" do
     film = Film.new("some name")
     film.add_genre("some genre")
-    film.genres.find("some genre").should_not == nil
+    film.genres.find { |g| g == "some genre" }.should == "some genre"
   end
 
   it "should not add genre if genre already exists" do
