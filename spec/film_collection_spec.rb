@@ -20,4 +20,12 @@ describe "Film Collection" do
       film_collection.add(Film.new("some name"))[-1].title.should_not == "some name"
     end
   end
+
+  it "should find film by title" do
+    film_collection = FilmCollection.new
+    film_collection.add(Film.new("some title"))
+    film_collection.add(Film.new("some other title"))
+    film_collection.add(Film.new("some other other title"))
+    film_collection.find("some other title").should == "some other title"
+  end
 end
