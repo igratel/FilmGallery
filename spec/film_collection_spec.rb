@@ -21,11 +21,12 @@ describe "Film Collection" do
     end
   end
 
-  it "should find film by title" do
+  it "should find film by title and should return nil if title does not exist" do
     film_collection = FilmCollection.new
     film_collection.add(Film.new("some title"))
     film_collection.add(Film.new("some other title"))
     film_collection.add(Film.new("some other other title"))
-    film_collection.find("some other title").should == "some other title"
+    film_collection.find("some other title").title.should == "some other title"
+    film_collection.find("some not existing title").should == nil
   end
 end

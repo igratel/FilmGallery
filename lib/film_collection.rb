@@ -10,4 +10,8 @@ class FilmCollection
       @films
     end
   end
+
+  def find (title)
+    @films.find { |film| title == film.title }
+  end
 end
