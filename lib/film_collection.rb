@@ -1,4 +1,6 @@
 class FilmCollection
+  attr_reader :films
+
   def initialize ()
     @films = Array.new
   end
@@ -25,9 +27,7 @@ class FilmCollection
   def change_title (old_title, new_title)
     if find(old_title) != nil
       if find(new_title) == nil
-        film = Film.new(new_title)
-        old_film_index = @films.find_index(find(old_title))
-        @films[old_film_index] = film
+        find(old_title).title = new_title
         find(new_title)
       else
         find(old_title)
